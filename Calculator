@@ -1,0 +1,377 @@
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
+import java.awt.event.ActionEvent;
+public class GUI_1{
+	public static void main(String[] args) {
+		frame obj =new frame();
+		
+		
+}}
+
+class frame extends JFrame implements ActionListener {
+	
+	JTextField t1,t2,t3;
+	JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24;
+	JLabel l;
+	double one;
+	double two;
+	double ans;
+	String operation;
+	String answer;
+	Boolean isDecimal=false;
+	
+	
+	
+	public frame()//constructor 
+	{	
+		
+		l=new JLabel("STANDARD CALCULATOR");
+		l.setFont(new Font("Tahoma", Font.BOLD, 18));
+		l.setBackground(Color.WHITE);
+		l.setForeground(new Color(255, 255, 255));
+		l.setPreferredSize(new Dimension(240, 28));
+		
+	t1=new JTextField(13);
+	t1.setFont(new Font("Tahoma", Font.BOLD, 28));
+	t1.setPreferredSize(new Dimension(280, 58));
+	t1.setHorizontalAlignment(SwingConstants.TRAILING);
+		 b1 =new JButton("+");
+		 b1.setFont(new Font("Tahoma", Font.BOLD, 20));
+		 b1.setPreferredSize(new Dimension(74, 38));
+		 b1.setBackground(Color.DARK_GRAY);
+		 b1.setForeground(new Color(255, 255, 255));
+		 b2 =new JButton("-" );
+		 b2.setPreferredSize(new Dimension(74, 38));
+		 b2.setFont(new Font("Tahoma", Font.BOLD, 20));
+		 b2.setBackground(Color.DARK_GRAY);
+		 b2.setForeground(new Color(255, 255, 255));
+		 b3 =new JButton("x");
+		 b3.setPreferredSize(new Dimension(74, 38));
+		 b3.setFont(new Font("Tahoma", Font.BOLD, 20));
+		 b3.setBackground(Color.DARK_GRAY);
+		 b3.setForeground(new Color(255, 255, 255));
+		 b4 =new JButton("/");
+		 b4.setPreferredSize(new Dimension(74, 38));
+		 b4.setFont(new Font("Tahoma", Font.BOLD, 20));
+		 b4.setBackground(Color.DARK_GRAY);
+		 b4.setForeground(new Color(255, 255, 255));
+		 b5=new JButton("x\u00B2");
+		 b5.setPreferredSize(new Dimension(74, 38));
+		 b5.setFont(new Font("Tahoma", Font.BOLD, 20));
+		 b5.setBackground(Color.DARK_GRAY);
+		 b5.setForeground(new Color(255, 255, 255));
+		 b6=new JButton("=");
+		 b6.setPreferredSize(new Dimension(74, 38));
+		 b6.setFont(new Font("Tahoma", Font.BOLD, 20));
+		 b6.setBackground(Color.DARK_GRAY);
+		 b6.setForeground(new Color(255, 255, 255));
+		 b7=new JButton("C");
+		 b7.setPreferredSize(new Dimension(74, 38));
+		 b7.setFont(new Font("Tahoma", Font.BOLD, 20));
+		 b7.setBackground(Color.DARK_GRAY);
+		 b7.setForeground(new Color(255, 255, 255));
+		 b8=new JButton("1");
+		 b8.setPreferredSize(new Dimension(74, 38));
+		 b8.setFont(new Font("Tahoma", Font.BOLD, 20));
+		 b8.setBackground(Color.BLACK);
+			b8.setForeground(new Color(255, 255, 255));
+		 b9=new JButton("2");
+		 b9.setPreferredSize(new Dimension(74, 38));
+		 b9.setFont(new Font("Tahoma", Font.BOLD, 20));
+		 b9.setBackground(Color.BLACK);
+			b9.setForeground(new Color(255, 255, 255));
+		 b10=new JButton("3");
+		 b10.setPreferredSize(new Dimension(74, 38));b10.setFont(new Font("Tahoma", Font.BOLD, 20));
+		 b10.setBackground(Color.BLACK);
+			b10.setForeground(new Color(255, 255, 255));
+		 b11=new JButton("4");b11.setPreferredSize(new Dimension(74, 38));
+		 b11.setBackground(Color.BLACK);
+			b11.setForeground(new Color(255, 255, 255));b11.setFont(new Font("Tahoma", Font.BOLD, 20));
+		 b12=new JButton("5");b12.setPreferredSize(new Dimension(74, 38));
+		 b12.setFont(new Font("Tahoma", Font.BOLD, 20));
+		 b12.setBackground(Color.BLACK);
+		 b12.setForeground(new Color(255, 255, 255));
+		 b13=new JButton("6");b13.setPreferredSize(new Dimension(74, 38));
+		 b13.setFont(new Font("Tahoma", Font.BOLD, 20));
+		 b13.setBackground(Color.BLACK);
+		 b13.setForeground(new Color(255, 255, 255));
+		 b14=new JButton("7");b14.setPreferredSize(new Dimension(74, 38));
+		 b14.setFont(new Font("Tahoma", Font.BOLD, 20));
+		 b14.setBackground(Color.BLACK);
+		 b14.setForeground(new Color(255, 255, 255));
+		 b15=new JButton("8");b15.setPreferredSize(new Dimension(74, 38));
+		 b15.setFont(new Font("Tahoma", Font.BOLD, 20));
+		 b15.setBackground(Color.BLACK);
+		 b15.setForeground(new Color(255, 255, 255));
+		 b16=new JButton("9");b16.setPreferredSize(new Dimension(74, 38));
+		 b16.setFont(new Font("Tahoma", Font.BOLD, 20));
+		 b16.setBackground(Color.BLACK);
+		 b16.setForeground(new Color(255, 255, 255));
+		 b17=new JButton("0");b17.setPreferredSize(new Dimension(74, 38));
+		 b17.setFont(new Font("Tahoma", Font.BOLD, 20));
+		 b17.setBackground(Color.BLACK);
+		 b17.setForeground(new Color(255, 255, 255));
+		 b18=new JButton(".");b18.setPreferredSize(new Dimension(74, 38));
+		 b18.setFont(new Font("Tahoma", Font.BOLD, 20));
+		 b18.setBackground(Color.DARK_GRAY);
+		 b18.setForeground(new Color(255, 255, 255));
+		 b19=new JButton("%");b19.setPreferredSize(new Dimension(74, 38));
+		 b19.setFont(new Font("Tahoma", Font.BOLD, 20));
+		 b19.setBackground(Color.DARK_GRAY);
+		 b19.setForeground(new Color(255, 255, 255));
+		 b20=new JButton("1/x");b20.setPreferredSize(new Dimension(74, 38));
+		 b20.setFont(new Font("Tahoma", Font.BOLD, 20));
+		 b20.setBackground(Color.DARK_GRAY);
+		 b20.setForeground(new Color(255, 255, 255));
+		 b21=new JButton("\u221A");b21.setPreferredSize(new Dimension(74, 38));
+		 b21.setFont(new Font("Tahoma", Font.BOLD, 20));
+		 b21.setBackground(Color.DARK_GRAY);
+		 b21.setForeground(new Color(255, 255, 255));
+		 b22=new JButton("\u2190");b22.setPreferredSize(new Dimension(74, 38));
+		 b22.setFont(new Font("Tahoma", Font.BOLD, 22));
+		 b22.setBackground(Color.DARK_GRAY);
+		 b22.setForeground(new Color(255, 255, 255));
+		 b23=new JButton("\u03C0");b23.setPreferredSize(new Dimension(74, 38));
+		 b23.setFont(new Font("Tahoma", Font.BOLD, 20));
+		 b23.setBackground(Color.DARK_GRAY);
+		 b23.setForeground(new Color(255, 255, 255));
+		 b24=new JButton("+/-");b24.setPreferredSize(new Dimension(74, 38));
+		 b24.setFont(new Font("Tahoma", Font.BOLD, 20));
+		 b24.setBackground(Color.DARK_GRAY);
+		 b24.setForeground(new Color(255, 255, 255));
+		 add(l);
+		add(t1);
+		add(b19);
+		add(b21);
+		add(b5);
+		add(b20);
+		add(b23);add(b7);add(b22);add(b4);add(b14);
+		add(b15);
+		add(b16);add(b3);add(b11);
+		add(b12);
+		add(b13);
+		add(b2);add(b8);
+		add(b9);
+		add(b10);
+		add(b1);
+		add(b24);
+		add(b17);
+		add(b18);
+		add(b6);
+		b1.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				one=Double.parseDouble(t1.getText());
+				t1.setText("");
+				operation="+";
+				
+			}
+		});
+		b2.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				one=Double.parseDouble(t1.getText());
+				t1.setText("");
+				operation="-";
+			}
+		});
+		b3.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				one=Double.parseDouble(t1.getText());
+				t1.setText("");
+				operation="x";
+			}
+		});
+		b4.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				one=Double.parseDouble(t1.getText());
+				t1.setText("");
+				operation="/";
+			}
+		});
+		b5.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				double a=(Double.parseDouble(t1.getText()));
+				a=a*a;
+				t1.setText("");
+				t1.setText(t1.getText()+a);
+				
+			}
+		});
+		b6.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				two=Double.parseDouble(t1.getText());
+				if(operation=="+") {
+					ans=one+two;
+					answer=String.format("%.2f", ans);
+					t1.setText(answer);
+				}
+				else if(operation=="-") {
+					ans=one-two;
+					answer=String.format("%.2f", ans);
+					t1.setText(answer);
+				}
+				else if(operation=="/") {
+					ans=one/two;
+					answer=String.format("%.2f", ans);
+					t1.setText(answer);
+				}
+				else if(operation=="x") {
+					ans=one*two;
+					answer=String.format("%.2f", ans);
+					t1.setText(answer);
+				}
+				else if(operation=="%") {
+					ans=one%two;
+					answer=String.format("%.2f", ans);
+					t1.setText(answer);
+				}
+			}
+		});
+		b7.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				t1.setText(null);
+			}
+		});
+		b8.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				String num=t1.getText()+b8.getText();
+				t1.setText(num);
+			}
+		});
+		b9.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				String num=t1.getText()+b9.getText();
+				t1.setText(num);
+				
+			}
+		});
+		b10.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				String num=t1.getText()+b10.getText();
+				t1.setText(num);
+			}
+		});
+		b11.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				String num=t1.getText()+b11.getText();
+				t1.setText(num);
+			}
+		});
+		b12.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				String num=t1.getText()+b12.getText();
+				t1.setText(num);
+			}
+		});
+		b13.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				String num=t1.getText()+b13.getText();
+				t1.setText(num);
+			}
+		});
+		b14.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				String num=t1.getText()+b14.getText();
+				t1.setText(num);
+			}
+		});
+		b15.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				String num=t1.getText()+b15.getText();
+				t1.setText(num);
+			}
+		});
+		b16.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				String num=t1.getText()+b16.getText();
+				t1.setText(num);
+			}
+		});
+		b17.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				String num=t1.getText()+b17.getText();
+				t1.setText(num);
+			}
+		});
+		b18.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				if(!isDecimal) {
+					t1.setText(t1.getText()+b18.getText());
+					isDecimal=true;}
+			}
+		});
+		b19.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				one=Double.parseDouble(t1.getText());
+				t1.setText("");
+				operation="%";
+			}
+		});
+		b20.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				double a=1/(Double.parseDouble(t1.getText()));
+				t1.setText("");
+				t1.setText(t1.getText()+a);
+			}
+		});
+		b21.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				double a=Math.sqrt(Double.parseDouble(t1.getText()));
+				t1.setText("");
+				t1.setText(t1.getText()+a);
+			}
+		});
+		b22.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				String back=null;
+				if(t1.getText().length()>0) {
+					StringBuilder str=new StringBuilder(t1.getText());
+					str.deleteCharAt(t1.getText().length()-1);
+					back=str.toString();
+					t1.setText(back);
+				}
+			}
+		});
+		b23.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				String num=t1.getText()+b23.getText();
+				t1.setText("3.14");
+				
+			}
+		});
+		b24.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				double a=Double.parseDouble(String.valueOf(t1.getText()));
+				a=a*(-1);
+				t1.setText(String.valueOf(a));
+			}
+		});
+
+		setLayout(new FlowLayout());
+		setVisible(true);
+		setSize(200,250);
+		setLocationRelativeTo(null);
+		setBounds(370,420,370,420);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		getContentPane().setBackground(new Color(50, 51, 51));
+		
+	}
+
+
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+}
